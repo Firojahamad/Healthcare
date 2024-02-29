@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Portal</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    section {
+      margin: 20px;
+    }
+
+    .advertisement {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 300px; 
+      object-fit: cover; 
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-form, .appointment-form, .doctor-time, .doctors {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    .doctors .card {
+      margin-bottom: 20px;
+    }
+
+    .doctors img {
+      width: 100px; 
+      height: 100px; 
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .questions {
+        margin: 20px;
+        text-align: center;
+      }
+  
+      .questions h1 {
+        color: #007bff;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+  
+      .tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+  
+      .tag {
+        background-color: #007bff;
+        color: #fff;
+        padding: 8px 16px;
+        margin: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+  
+      .tag:hover {
+        background-color: #0056b3;
+      }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Healthcare Portal</h1>
+  </header>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#advertisement">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#login-form">Patient Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#appointment-form">Patient Appointment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#doctor-time">Doctor Visiting Time</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="advertisement" class="advertisement">
+    
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="m1.jpg" class="d-block w-100" alt="Advertisement 1">
+        </div>
+        <div class="carousel-item">
+          <img src="m3.jpg" class="d-block w-100" alt="Advertisement 2">
+        </div>
+        <div class="carousel-item">
+            <img src="m4.webp" class="d-block w-100" alt="Advertisement 2">
+          </div>
+        
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+  
+  <section id="login-form" class="login-form">
+    <h2>Patient Login</h2>
+   
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" class="form-control" id="age" placeholder="Enter your age">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+
+  <section id="appointment-form" class="appointment-form">
+    <h2>Patient Appointment</h2>
+    
+    <form>
+      <div class="form-group">
+        <label for="doctor">Select Doctor</label>
+        <select class="form-control" id="doctor">
+          <option>Dr. John Doe</option>
+          <option>Dr. Jane Smith</option>
+       
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="patientEmail">Patient Email</label>
+        <input type="email" class="form-control" id="patientEmail" placeholder="Enter patient's email">
+      </div>
+      <div class="form-group">
+        <label for="appointmentTime">Select Appointment Time</label>
+        <input type="datetime-local" class="form-control" id="appointmentTime">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Schedule Appointment</button>
+    </form>
+  </section>
+
+  <section id="doctor-time" class="doctor-time">
+    <h2>Doctor Visiting Time</h2>
+   
+    <p>Dr. John Doe's Visiting Time: Monday to Friday, 9:00 AM - 5:00 PM</p>
+    <p>Dr. Jane Smith's Visiting Time: Tuesday and Thursday, 10:00 AM - 6:00 PM</p>
+    
+    <p>Contact Dr. John Doe: Mobile - 123-456-7890, Email - john.doe@example.com</p>
+    <p>Contact Dr. Jane Smith: Mobile - 987-654-3210, Email - jane.smith@example.com</p>
+  </section>
+
+  
+  <section class="doctors">
+    <div class="card-deck">
+      <div class="card">
+        <img src="d1.jpg" class="card-img-top rounded-circle" alt="Dr. John Doe">
+        <div class="card-body">
+          <h5 class="card-title">Dr. John Doe</h5>
+          <p class="card-text">Email: john.doe@example.com</p>
+          <p class="card-text">Mobile: 123-456-7890</p>
+          <p class="card-text">Meeting Time: Monday to Friday, 9:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="d2.jpg" class="card-img-top rounded-circle" alt="Dr. Jane Smith">
+        <div class="card-body">
+          <h5 class="card-title">Dr. Jane Smith</h5>
+          <p class="card-text">Email: jane.smith@example.com</p>
+          <p class="card-text">Mobile: 987-654-3210</p>
+          <p class="card-text">Meeting Time: Tuesday and Thursday, 10:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+      <!-- Add more cards for additional doctors as needed -->
+    </div>
+  </section>
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script>
+    
+    $(document).ready(function(){
+      $('.carousel').carousel({
+        interval: 5000
+      });
+    });
+  </script>
+  <div class="questions">
+    <h1>Top Healthcare Blog Posts</h1>
+    <div class="tags">
+      <a href="https://www.health.harvard.edu/" class="tag" target="_blank">Harvard Health</a>
+      <a href="https://logos-world.net/mayo-clinic-logo/" class="tag" target="_blank">Mayo Clinic</a>
+      <a href="https://www.purdueglobal.edu/blog/student-life/valuable-health-wellness-blogs/" class="tag" target="_blank">Purdue Global</a>
+      <a href="https://www.nerdfitness.com/blog/" class="tag" target="_blank">Nerd Fitness</a>
+      <a href="https://www.wellandgood.com/" class="tag" target="_blank">Well+Good</a>
+      <a href="https://www.healthline.com/nutrition" class="tag" target="_blank">Healthline Nutrition</a>
+    </div>
+  </div>
+</body>
+</html>
